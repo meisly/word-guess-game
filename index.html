@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Word Guess Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <main class="container">
+        <div class="row">
+            <div class="col-1 col-md-2"></div>
+            <div class="game-intro game col-10 col-md-8">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>
+                            Welcome to 9 Lives
+                        </h2>
+                        <p>
+                            Can you help Smoosh find their way home? Smoosh just moved to a new city and has gone
+                            exploring. Now they can't remember the way home. Smoosh remembers that there was a word
+                            written on the building they live in. Can you help Smoosh remember the word? If you guess
+                            wrong too many times Smoosh will get too far from home and will never make it back.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 col-12">
+                        <img class="intro-pic " src="assets/images/catCity.jpg"
+                            alt="picture of a giant cat projecting a movie onto a skyscraper">
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 btn-div align-items-center">
+                        <button id="help-btn" type="button" class="btn btn-lg btn-secondary">I will help</button>
+                        <button id="quit-btn" type="button" class="btn btn-lg btn-secondary">Screw this!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-box game col-10 col-md-8 hidden">
+                <div class="row">
+                    <header class="col-12">
+                        <h1>9 Lives</h1>
+                    </header>
+                </div>
+                <div class="row">
+                    <div id="game-graphic" class="col-6">
+                        <!-- Image/Animation -->
+                    </div>
+                    <div class="col-6">
+
+                        <!-- Game Play Info -->
+                        <div class="word-container">
+                            <img id="word-con-pic" src="assets\images\sign.png" alt="street sign with obscured word">
+                            <h2 id="word" class="img-overlay"></h2>
+                        </div>
+                        <div id="game-info" class="game-info">
+                            <div id="letters-guessed">
+
+                            </div>
+                            <div id="guesses-remaining">
+
+                            </div>
+                            <div id="lives-remaining">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 col-md-2"></div>
+        </div>
+    </main>
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span class="text-muted">Copyright &copy;</span>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="assets\javascript\game.js"></script>
+</body>
+
+</html>
