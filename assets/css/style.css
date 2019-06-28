@@ -49,7 +49,7 @@ header {
 }
 .word-container .img-overlay {
     position: absolute;
-    bottom: .1em;
+    bottom: .4em;
     width: 90%;
     text-align: center;
     font-size: 1.5em;
