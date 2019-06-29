@@ -11,14 +11,12 @@ $("#help-btn").click(function(){
 // array to hold guesses, keyboard listener, function to check if key is in word
 // functions to do something pretty when you guess wrong
 
-let wordBank = ["tabby","main", "apartment","fish market","holcombe boulevard","home"];
+let wordBank = ["tabby","main", "bellaire","heights","holcombe","home"];
 
 
-let guessesRemaining = 6;
+
 let livesRemaining = 9;
 let level = -1;
-let word = wordBank[level];
-let blanks = [];
 
 
 function newLevel () {
@@ -47,11 +45,20 @@ document.getElementById("next-lvl").onclick = function () {
     newLevel();
 }
 
+
 document.onkeyup = function(event) {
     if (level ===-1) {
         return;
     }
-    var userGuess = event.key;
+
+    if (event.keyCode === 13 && !document.getElementById("next-lvl").classList.contains("hidden")) {
+        document.getElementById("next-lvl").click();
+    }
+
+    if (event.keyCode < 65 || event.keyCode > 90) {
+        return;
+    }
+    var userGuess = event.key.toLowerCase();
             
     if (lettersGuessed.includes(userGuess)) {
         
@@ -64,9 +71,11 @@ document.onkeyup = function(event) {
             pos = word.indexOf(userGuess, pos +1)
             blanks[pos] = userGuess;
             document.getElementById("word").innerHTML = blanks.join(" ");
-            lettersGuessed = lettersGuessed.concat([userGuess]);
         }
+        lettersGuessed = lettersGuessed.concat([userGuess]);
+
     }
+
     else {
         
         guessesRemaining = guessesRemaining -1;
@@ -74,16 +83,21 @@ document.onkeyup = function(event) {
         lettersGuessed = lettersGuessed.concat([userGuess]);
     }
     
+
     document.getElementById("letters-guessed").innerHTML = "You have already guessed: " + lettersGuessed;
-
+    
     if (blanks.join("") === word) {
-        document.getElementById("game-state").innerHTML = "Congratulations! You have beaten the level and helped Smoosh get closer to home.";
-        document.getElementById("next-lvl").classList.remove("hidden");
-    }
 
-    if (livesRemaining === 0) {
+        if (level === wordBank.length - 1){
+            document.getElementById("game-state").innerHTML = "Congratulations! You helped Smoosh make it home safely.";
 
+        }
+        else {
+            document.getElementById("game-state").innerHTML = "Congratulations! You have beaten the level and helped Smoosh get closer to home.";
+            document.getElementById("next-lvl").classList.remove("hidden");
+        }
     }
+    
     if (guessesRemaining === 0) {
         livesRemaining--;
         guessesRemaining = 6;
@@ -91,5 +105,13 @@ document.onkeyup = function(event) {
         document.getElementById("lives-remaining").innerHTML = "You have " + livesRemaining + " lives remaining";
         document.getElementById("guesses-remaining").innerHTML = "You have " + guessesRemaining + " guesses remaining";
 
+    }
+    if (livesRemaining === 0) {
+        document.getElementById("game-state").innerHTML = "Uh-oh, I guess even cats can't live forever.";
+        document.getElementById("game-instructions").classList.add("hidden");
+        document.getElementById("game-state-pic-1").classList.add("hidden");
+        document.getElementById("game-play-info").classList.add("hidden");
+        document.getElementById("lost-img").classList.remove("hidden");
+        
     }
 }

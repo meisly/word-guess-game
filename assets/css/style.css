@@ -1,6 +1,17 @@
 * {
     box-sizing: border-box;
 }
+body, .make-the-footer-work {
+    height: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+    text-align: center;
+}
 main {
     margin: .5em;
     max-height: 100%;
@@ -16,15 +27,18 @@ header {
     background-position: center;
     color: white;
     font-family: 'Indie Flower', cursive;
+    border-radius: 1em;
 }
 .game-intro h2 {
     text-align: center;
     margin: .4em;
     font-weight: bolder;
+
 }
 .intro-pic {
     margin: auto;
     width: 100%;
+    border-radius: .5em;
 }
 .hidden {
     display: none !important;
@@ -40,12 +54,15 @@ header {
 }
 .game-box {
     background-color:  #5a115a;
+    padding: 1em;
+    border-radius: 1em;
 }
 .word-container {
     position: relative;
 }
 #word-con-pic {
     max-width: 90%;
+    border-radius: .5em;
 }
 .word-container .img-overlay {
     position: absolute;
@@ -57,6 +74,14 @@ header {
 .game-info {
     color: white;
 }
-.game-graphic {
+.game-text {
     color: white;
+    font-family: 'Indie Flower', cursive;
+}
+.game-text h2 {
+    font-size: 2em;
+    font-weight: bolder;
+}
+.game-state-pic {
+    border-radius: 1em;
 }
