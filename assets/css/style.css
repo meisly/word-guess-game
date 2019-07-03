@@ -84,4 +84,9 @@ header {
 }
 .game-state-pic {
     border-radius: 1em;
+    max-height: 80vh;
+
+}
+#game-state {
+    text-align: center;
 }

@@ -6,12 +6,8 @@ $("#help-btn").click(function(){
         window.location = "http://www.google.com";
   });
 
-//   Game functions needed
-// array of words => word bank, function to pick a word from the array, function to display blanks for the word
-// array to hold guesses, keyboard listener, function to check if key is in word
-// functions to do something pretty when you guess wrong
 
-let wordBank = ["tabby","main", "bellaire","heights","holcombe","home"];
+let wordBank = ["main", "heights","holcombe","home"];
 
 
 
@@ -50,14 +46,19 @@ document.onkeyup = function(event) {
     if (level ===-1) {
         return;
     }
-
+    console.log(event.key);
     if (event.keyCode === 13 && !document.getElementById("next-lvl").classList.contains("hidden")) {
         document.getElementById("next-lvl").click();
     }
-
-    if (event.keyCode < 65 || event.keyCode > 90) {
+    if (event.key === "ArrowDown") {
+        guessesRemaining = 0;
+        livesRemaining = 0;
+        
+    }
+    else if (event.keyCode < 65 || event.keyCode > 90) {
         return;
     }
+
     var userGuess = event.key.toLowerCase();
             
     if (lettersGuessed.includes(userGuess)) {
@@ -115,3 +116,4 @@ document.onkeyup = function(event) {
         
     }
 }
+
