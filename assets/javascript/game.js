@@ -90,7 +90,11 @@ document.onkeyup = function(event) {
 
         if (level === wordBank.length - 1){
             document.getElementById("game-state").innerHTML = "Congratulations! You helped Smoosh make it home safely.";
-
+            document.getElementById("game-instructions").classList.add("hidden");
+            document.getElementById("game-state-pic-1").classList.add("hidden");
+            document.getElementById("game-play-info").classList.add("hidden");
+            document.getElementById("game-state-pic-box").classList.remove("hidden");
+            document.getElementById("won-img").classList.remove("hidden");
         }
         else {
             document.getElementById("game-state").innerHTML = "Congratulations! You have beaten the level and helped Smoosh get closer to home.";
@@ -111,8 +115,10 @@ document.onkeyup = function(event) {
         document.getElementById("game-instructions").classList.add("hidden");
         document.getElementById("game-state-pic-1").classList.add("hidden");
         document.getElementById("game-play-info").classList.add("hidden");
+        document.getElementById("game-state-pic-box").classList.remove("hidden");
         document.getElementById("lost-img").classList.remove("hidden");
         
     }
+
 }
 

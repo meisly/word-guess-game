@@ -82,10 +82,15 @@ header {
     font-size: 2em;
     font-weight: bolder;
 }
+#game-state-pic-box {
+    text-align: center;
+    height: 80vh;
+    max-height: 80vh;
+}
 .game-state-pic {
     border-radius: 1em;
-    max-height: 80vh;
-
+    height: 100%;
+    width: auto;
 }
 #game-state {
     text-align: center;
