@@ -17,7 +17,7 @@
         <main class="container">
             <div class="row">
                 <div class="col-1 col-md-2"></div>
-                <div class="game-intro game col-10 col-md-8">
+                <div id="game-intro" class="game-intro game col-10 col-md-8">
                     <div class="row">
                         <div class="col-12">
                             <h2>
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="game-box game col-10 col-md-8 hidden">
+                <div id="game-box" class="game-box game col-10 col-md-8 hidden">
                     <div class="row">
                         <header class="col-12">
                             <h1>9 Lives</h1>
@@ -57,6 +57,7 @@
                     <div class="row align-items-center">
                         <img id="lost-img" class="hidden game-state-pic col-12" src="assets/images/cat-shaped-hole.jpg"
                             alt="cat-shaped hole pic">
+                        <img id="won-img" class="hidden game-state-pic2 col-12" src="assets/images/catwin.jpg" alt="cat in a hat">
                         <div id="game-state" class="col-12 game-text">
                             <h2></h2>
                         </div>
@@ -102,7 +103,6 @@
             </div>
     </div>
     </footer>
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

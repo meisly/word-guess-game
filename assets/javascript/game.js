@@ -1,10 +1,4 @@
 
-$("#help-btn").click(function(){
-    $(".game").toggleClass("hidden");
-  });
-  $("#quit-btn").click(function () {
-        window.location = "http://www.google.com";
-  });
 
 
 let wordBank = ["main", "heights","holcombe","home"];
@@ -33,10 +27,15 @@ function newLevel () {
 }
 
 
-document.getElementById("help-btn").onclick = function () {
-    newLevel();    
-}
+document.getElementById("help-btn").onclick = function() {
+    document.getElementById("game-intro").classList.add("hidden");
+    document.getElementById("game-box").classList.remove("hidden");
+    newLevel();
+};
 
+document.getElementById("quit-btn").onclick = function () {
+    window.location = "http://www.google.com";   
+}
 document.getElementById("next-lvl").onclick = function () {
     newLevel();
 }
